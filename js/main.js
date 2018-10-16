@@ -33,6 +33,9 @@ function saveBookmark(e) {
 		localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 	};
 
+	// Clear form
+	document.getElementById("myForm").reset();
+
 	// Re-fetch bookmarks
 	fetchBookmarks();
 
@@ -69,7 +72,6 @@ function fetchBookmarks() {
 			bookmarksResults.innerHTML += '<div class="well">'+
 		                                  '<h3>'+name+
 		                                  ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' +
-		                                  ' <a class="btn btn-default" target="_blank" ">Visit</a> ' +
 		                                  ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
 		                                  '</h3>'+
 		                                  '</div>';
